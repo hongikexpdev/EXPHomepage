@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    {% block head %}
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    {% endblock %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}" />
+  </head>
+  <body>
+
+    <header class="navbar navbar-fixed-top navbar-inverse">
+	<div class="container">
+	  <b><a id="logo" href="/">Home</a></b>
+	  <nav>
+	    <ul class="nav navbar-nav navbar-right">
+	      <li><a href="{{ url_for('example1') }}">ex1</a></li>
+	      <li><a href="{{ url_for('example2') }}">ex2</a></li>
+	      <li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		  Account <b class="caret"></b>
+		</a>
+		<ul class="dropdown-menu">
+		  <li><a href="#">Profile</a></li>
+		  <li><a href="#">Settings</a></li>
+		  <li class="divider"></li>
+		  <li>
+		    And so on...
+		  </li>
+		</ul>
+	      </li>
+	    </ul>
+	  </nav>
+	</div>
+      </header>
+    <div id="content">{% block content %}{% endblock %}</div>
+    <div id="footer">
+      {% block footer %}
+      &copy; Copyright 2016 by <a href="//malkoG.github.io">Malko</a>
+      {% endblock %}
+    </div>
+  </body>
+</html>
