@@ -8,5 +8,5 @@ deploy:
   provider: heroku
   app: exp-homepage
   on:
-    repo: hongikexpdev/exp-homepage
+    repo: hongikexpdev/EXPHomepage
     branch: master
